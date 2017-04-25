@@ -1,0 +1,3 @@
+" DelimitMate: cerrar () [] ...
+let delimitMate_expand_space = 1  " Cuando aprietas intro que abra
+au FileType html let b:delimitMate_matchpairs = "(:),[:],{:}"    " no ponemos <> para que el autocompletar html tag funcione bien

@@ -1,0 +1,47 @@
+map W <Plug>CamelCaseMotion_w
+map B <Plug>CamelCaseMotion_b
+map E <Plug>CamelCaseMotion_e
+
+todo ctrlp
+
+nmap ,u :GundoToggle
+
+todo vim-easymotion
+
+todo vim-multiple-cursors
+
+:SaveSession    :OpenSession
+
+todo vim-tmux-navigation
+
+nnoremap ,yr :YRShow    yankring
+nnoremap <C-y> :YRShow   yankring
+
+" next-textobject
+onoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>
+xnoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>
+onoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>
+xnoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>
+onoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>
+xnoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>
+onoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>
+xnoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>
+
+settings/wrapping
+vmap <D-j> gj
+vmap <D-k> gk
+vmap <D-$> g$
+vmap <D-^> g^
+vmap <D-0> g^
+nmap <D-j> gj
+nmap <D-k> gk
+nmap <D-$> g$
+nmap <D-^> g^
+nmap <D-0> g^
+
+Q  => window killer
+
+,w  => wihtespace killer
+
+w!! para grabar como sudo   settings/sudo-write
+

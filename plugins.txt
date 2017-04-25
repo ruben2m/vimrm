@@ -1,0 +1,285 @@
+//////////Colorizer//////////
+https://github.com/chrisbra/Colorizer
+Colorea nombres y codigos de colores, p.e: css -> #000000 colorea a negro
+
+//////////lightline//////////
+https://github.com/itchyny/lightline.vim
+status bar configurable
+
+//////////gruvbox//////////
+https://github.com/morhetz/gruvbox
+Tema visual
+
+//////////showmarks//////////
+https://github.com/xsunsmile/showmarks
+Muestra los bookmarks de vim
+
+//////////vim-fugitive//////////
+https://github.com/tpope/vim-fugitive
+Manejo de git desde vim:
+:Gdiff    => Muestra las diferencias con el archivo actual
+:Gedit, :Gvsplit   => edita el index del archivo actual
+:Gstatus  => se añaden/quitan para commit con -
+:Gcommit
+:Gblame    git blame
+...
+
+//////////vim-git//////////
+https://github.com/tpope/vim-git
+Runtime files
+
+//////////gitv//////////
+https://github.com/gregsexton/gitv
+:Gitv [args]
+
+//////////vim-polyglot//////////
+https://github.com/sheerun/vim-polyglot
+Pack de lenguajes para VIM
+
+//////////vim-snipmate.git//////////
+https://github.com/garbas/vim-snipmate
+Snippets
+
+//////////vim-snippets//////////
+https://github.com/honza/vim-snippets
+Snippets
+
+//////////vim-flavored-markdown.git//////////
+https://github.com/jtratner/vim-flavored-markdown
+Ver preview de markdown en vim
+
+//////////syntastic.git//////////
+https://github.com/vim-syntastic/syntastic
+Syntax checking
+
+//////////vim-html-escape//////////
+https://github.com/skwp/vim-html-escape
+<Leader>he to escape html, <Leader>hu to unescape
+
+//////////vim-closetag//////////
+https://github.com/alvan/vim-closetag
+Cierra etiquetas html
+
+//////////YouCompleteMe//////////
+https://github.com/Valloric/YouCompleteMe
+Autocompletar codigo
+
+//////////vim-nerdtree-tabs.git//////////
+https://github.com/jistr/vim-nerdtree-tabs
+Que nerdtree funcione con tabs
+
+//////////nerdtree.git//////////
+https://github.com/scrooloose/nerdtree
+
+//////////ctrlp.vim//////////
+https://github.com/ctrlpvim/ctrlp.vim
+Buscar archivos. 
+,t => abrir en archivos.    ,b abrir en buffer. Y dentro de :CtrlP,
+<c-d> to switch to filename only search instead of full path.
+<c-j>, <c-k> or the arrow keys to navigate the result list.
+<c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+...
+keymap en settings/ctrlp.vim
+
+//////////vim-misc//////////
+https://github.com/xolox/vim-misc
+Necesario para otros plugins de xolox
+
+//////////vim-session//////////
+https://github.com/xolox/vim-session
+Gestión de sesiones:
+:SaveSession
+:OpenSession
+...
+
+//////////ack.vim//////////
+https://github.com/mileszs/ack.vim
+:Ack! [options] {pattern} [{directories}]   => ! es para no ir al primer resultado automaticamente
+go => preview fichero manteniendo focus en resultados de busqueda
+h  => abrir en split horizontal  // H  => manteniendo foco en resultados
+v  => vertical // gv => foco en resultados
+q  => cerrar
+...
+
+//////////IndexedSearch//////////
+https://github.com/vim-scripts/IndexedSearch
+Mejora la busqueda de / poniendo resultado X de Y
+
+//////////vim-visual-star-search//////////
+https://github.com/nelstrom/vim-visual-star-search
+Busqueda de la palabra bajo el cursor
+*  => en el fichero
+,* => vimgrep
+
+//////////greplace.vim//////////
+https://github.com/skwp/greplace.vim
+Buscar y reemplazar en múltiples archivos
+:GSearch   => para buscar, luego hacer los cambios en esa ventana
+:Greplace  => para hacer los cambios de esa ventana en los ficheros.
+:wall      => para grabar todo
+
+//////////vim-easymotion//////////
+https://github.com/easymotion/vim-easymotion
+Moverse por el documento mediante busqueda de caracteres en el mismo
+TODO ver para configurar el nuevo plugin
+...
+,,w => marcar palabras para ir hacia delante
+,,b => hacia atrás
+
+//////////austintaylor/vim-indentobject//////////
+https://github.com/austintaylor/vim-indentobject
+Indentacion de bloques.
+
+//////////textobj-word-column.vim//////////
+https://github.com/coderifous/textobj-word-column.vim
+This plugin adds ic, ac, iC, and aC as text-objects. Use them in commands like vic, cic, and daC.
+Es decir seleccionar dentro de un bloque de texto  vic
+
+//////////vim-textobj-entire//////////
+https://github.com/kana/vim-textobj-entire
+Seleccionar todo
+ae => selecciona todo el contenido del fichero actual
+ai => igual, pero sin seleccionar lineas vacias al principio y al final
+
+//////////vim-textobj-function//////////
+https://github.com/kana/vim-textobj-function
+Hacer algo con texto en funciones:
+af => toda la función
+if => dentro de la función
+Ejemplo: vaf => selecciona toda la función;   dif => borra el contenido de la función.
+
+//////////vim-textobj-user//////////
+https://github.com/kana/vim-textobj-user
+Para crear textobjects propios fácilmente.
+
+//////////vim-indent-guides//////////
+https://github.com/nathanaelkane/vim-indent-guides
+Muestra guias de indentado
+
+//////////vim-textobj-function-javascript//////////
+https://github.com/thinca/vim-textobj-function-javascript
+Usar textobjects con javascript con la tecla %
+
+//////////argtextobj.vim//////////
+https://github.com/vim-scripts/argtextobj.vim
+textobjects para argumentos con la tecla a:
+cia => cambiar inner-argument  // daa => delete an argument
+
+//////////splitjoin.vim//////////
+https://github.com/AndrewRadev/splitjoin.vim
+Cambiar lineas de codigo de 1 linea a multilinea, ej: un if
+gS => de una línea a múltiples  //  gJ => de múltiples líneas a una
+
+//////////ruben2m/delimitMate//////////
+https://github.com/ruben2m/delimitMate
+Personalización de delimitMate => cerrado automático de () [] {} <> ...
+
+//////////change-inside-surroundings.vim.git//////////
+Cambiar entre algo:
+cit => cambiar entre html tags
+ci{ => cambiar entre {. Se puede [], (), "", ><, '', ``
+
+//////////tabular//////////
+https://github.com/godlygeek/tabular
+Ordenar de manera tabulada un texto, ej:
+    abc,def,ghi
+    a,b
+    a,b,c
+:Tabularize /,/r1c1l0
+    abc , def, ghi
+      a , b
+      a , b  ,  c
+...
+
+//////////tcomment_vim.git//////////
+https://github.com/tomtom/tcomment_vim
+Comentar lineas y bloques
+...
+gcp => comenta un párrafo
+
+//////////camelcasemotion.git//////////
+https://github.com/vim-scripts/camelcasemotion
+Moverse entre palabras. Mejora el de vim.
+,w // ,b // ,e
+
+//////////vim-multiple-cursors//////////
+https://github.com/terryma/vim-multiple-cursors
+Multiple cursor
+,mc  // <C-n> siguiente <C-p> previous <C-x> skip <Esc> salir
+
+//////////investigate.vim//////////
+https://github.com/keith/investigate.vim
+gK => Mostrar documentación de donde estamos
+
+//////////vim-tmux-navigator//////////
+https://github.com/christoomey/vim-tmux-navigator
+Cambiar entre splits abiertos
+<ctrl-h> => Left // <ctrl-j> => Down // <ctrl-k> => Up // <ctrl-l> => Right
+
+//////////vim-addon-mw-utils.git//////////
+https://github.com/MarcWeber/vim-addon-mw-utils
+Requerido por otros plugins
+
+//////////webapi-vim.git//////////
+https://github.com/mattn/webapi-vim
+Requerido por otros plugins
+
+//////////gundo.vim//////////
+https://github.com/sjl/gundo.vim
+,u => Visualizar el arbol de undos (settings propia)
+
+//////////YankRing.vim//////////
+https://github.com/skwp/YankRing.vim
+Historial de yanks cambios y borrados
+,yr    o    <C-y> => para ver el historial de cambios
+
+//////////tlib_vim.git//////////
+https://github.com/tomtom/tlib_vim
+Requerido por otros plugins
+
+//////////vim-abolish//////////
+https://github.com/tpope/vim-abolish
+Corrección de palabras
+
+//////////vim-endwise.git//////////
+https://github.com/tpope/vim-endwise
+Cerrar estructuras tipo if...
+
+//////////vim-ragtag//////////
+https://github.com/tpope/vim-ragtag
+Mappings para HTML, XML, PHP, ASP, eRuby, JSP, and more
+TODO ver mapping
+
+//////////vim-repeat.git//////////
+https://github.com/tpope/vim-repeat
+Mejora el repetir de .   Permite repetir comandos no nativos de vim
+
+//////////vim-surround.git//////////
+https://github.com/tpope/vim-surround
+Cambiar lo que rodea a un texto. "texto"  cs"'  =>  'texto'  cs'<q> => <q>texto</q>
+...
+
+//////////AnsiEsc.vim.git//////////
+https://github.com/vim-scripts/AnsiEsc.vim
+Visualizar correctamente ficheros con ansi esc characters
+
+//////////AutoTag.git//////////
+https://github.com/vim-scripts/AutoTag
+Gestión de ficheros de tags
+
+//////////lastpos.vim//////////
+https://github.com/vim-scripts/lastpos.vim
+Mejora de las funciones de posicionamiento de vim de última posición
+
+//////////sudo.vim//////////
+https://github.com/vim-scripts/sudo.vim
+Permite la modificación de un fichero con privilegios sudo sin abrir de nuevo vim
+
+//////////ctrlr.vim//////////
+https://github.com/goldfeld/ctrlr.vim
+Emula el reverse search del Shell
+<expr> <C-r>
+
+//////////editorconfig-vim//////////
+https://github.com/editorconfig/editorconfig-vim
+Opciones de configuración extendidas del editor.
