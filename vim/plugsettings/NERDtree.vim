@@ -20,8 +20,12 @@ function! NTFinderP()
             "" Open Rtree (using rails plugin, it opens in project dir)
             :Rtree
         else
-            "" Open NERDTree in the file path
-            :NERDTreeFind
+            if (@%)
+                "" Si hay fichero actual Open NERDTree in the file path
+                :NERDTreeFind
+            else
+                :NERDTreeToggle
+            endif
         endif
     endif
 endfunction

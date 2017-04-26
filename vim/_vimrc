@@ -1,0 +1,53 @@
+""""""""""""""""""""""""""""""""""""""""""
+" Archivo de configuracion neovim windows 
+""""""""""""""""""""""""""""""""""""""""""
+
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all 
+" the plugins.
+let mapleader=","
+
+
+let dirvim="C:/Users/esrum/vimfiles/"
+
+" Archivo de configuracion del usuario
+let filename = dirvim . ".vimrc.before"
+if filereadable(expand(filename))
+  exe source 'filename'
+endif
+
+set nocompatible
+filetype off
+
+set rtp+=C:/Users/esrum/vimfiles/bundle/Vundle.vim
+call vundle#begin('D:/vim/bundle')
+
+Plugin 'VundleVim/Vundle.vim'
+
+source C:/Users/esrum/vimfiles/vundles.vim
+
+call vundle#end()
+filetype plugin indent on
+
+" Añadimos settings de los plugins
+let vimplugsettings = dirvim . "plugsettings"
+for fpath in split(globpath(vimplugsettings, '*.vim'), '\n')
+  exe 'source' fpath
+endfor
+
+
+" Añadimos settings
+let vimsettings = dirvim . "settings"
+for fpath in split(globpath(vimsettings, '*.vim'), '\n')
+  exe 'source' fpath
+endfor
+
+colorscheme railscasts
+
+
+" Archivo de configuracion del usuario
+let filename = dirvim . ".vimrc.after"
+if filereadable(expand(filename))
+  exe source filename
+endif
