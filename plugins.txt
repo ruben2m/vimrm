@@ -14,20 +14,6 @@ Tema visual
 https://github.com/xsunsmile/showmarks
 Muestra los bookmarks de vim
 
-//////////vim-fugitive//////////
-https://github.com/tpope/vim-fugitive
-Manejo de git desde vim:
-:Gdiff    => Muestra las diferencias con el archivo actual
-:Gedit, :Gvsplit   => edita el index del archivo actual
-:Gstatus  => se añaden/quitan para commit con -
-:Gcommit
-:Gblame    git blame
-...
-
-//////////vim-git//////////
-https://github.com/tpope/vim-git
-Runtime files
-
 //////////gitv//////////
 https://github.com/gregsexton/gitv
 :Gitv [args]
@@ -59,10 +45,6 @@ https://github.com/skwp/vim-html-escape
 //////////vim-closetag//////////
 https://github.com/alvan/vim-closetag
 Cierra etiquetas html
-
-//////////YouCompleteMe//////////
-https://github.com/Valloric/YouCompleteMe
-Autocompletar codigo
 
 //////////vim-nerdtree-tabs.git//////////
 https://github.com/jistr/vim-nerdtree-tabs
@@ -228,36 +210,9 @@ Requerido por otros plugins
 https://github.com/sjl/gundo.vim
 ,u => Visualizar el arbol de undos (settings propia)
 
-//////////YankRing.vim//////////
-https://github.com/skwp/YankRing.vim
-Historial de yanks cambios y borrados
-,yr    o    <C-y> => para ver el historial de cambios
-
 //////////tlib_vim.git//////////
 https://github.com/tomtom/tlib_vim
 Requerido por otros plugins
-
-//////////vim-abolish//////////
-https://github.com/tpope/vim-abolish
-Corrección de palabras
-
-//////////vim-endwise.git//////////
-https://github.com/tpope/vim-endwise
-Cerrar estructuras tipo if...
-
-//////////vim-ragtag//////////
-https://github.com/tpope/vim-ragtag
-Mappings para HTML, XML, PHP, ASP, eRuby, JSP, and more
-TODO ver mapping
-
-//////////vim-repeat.git//////////
-https://github.com/tpope/vim-repeat
-Mejora el repetir de .   Permite repetir comandos no nativos de vim
-
-//////////vim-surround.git//////////
-https://github.com/tpope/vim-surround
-Cambiar lo que rodea a un texto. "texto"  cs"'  =>  'texto'  cs'<q> => <q>texto</q>
-...
 
 //////////AnsiEsc.vim.git//////////
 https://github.com/vim-scripts/AnsiEsc.vim
@@ -283,3 +238,48 @@ Emula el reverse search del Shell
 //////////editorconfig-vim//////////
 https://github.com/editorconfig/editorconfig-vim
 Opciones de configuración extendidas del editor.
+
+//////////vim-abolish//////////
+https://github.com/tpope/vim-abolish
+Corrección de palabras
+
+//////////vim-endwise.git//////////
+https://github.com/tpope/vim-endwise
+Cerrar estructuras tipo if...
+
+//////////vim-ragtag//////////
+https://github.com/tpope/vim-ragtag
+Mappings para HTML, XML, PHP, ASP, eRuby, JSP, and more
+TODO ver mapping
+
+//////////vim-repeat.git//////////
+https://github.com/tpope/vim-repeat
+Mejora el repetir de .   Permite repetir comandos no nativos de vim
+
+//////////vim-surround.git//////////
+https://github.com/tpope/vim-surround
+Cambiar lo que rodea a un texto. "texto"  cs"'  =>  'texto'  cs'<q> => <q>texto</q>
+...
+
+//////////vim-fugitive//////////
+https://github.com/tpope/vim-fugitive
+Manejo de git desde vim:
+:Gdiff    => Muestra las diferencias con el archivo actual
+:Gedit, :Gvsplit   => edita el index del archivo actual
+:Gstatus  => se añaden/quitan para commit con -
+:Gcommit
+:Gblame    git blame
+...
+
+//////////vim-git//////////
+https://github.com/tpope/vim-git
+Runtime files
+
+//////////YankRing.vim//////////
+https://github.com/skwp/YankRing.vim
+Historial de yanks cambios y borrados
+,yr    o    <C-y> => para ver el historial de cambios
+
+//////////YouCompleteMe//////////
+https://github.com/Valloric/YouCompleteMe
+Autocompletar codigo

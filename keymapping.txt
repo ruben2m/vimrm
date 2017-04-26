@@ -1,33 +1,82 @@
-map W <Plug>CamelCaseMotion_w
-map B <Plug>CamelCaseMotion_b
-map E <Plug>CamelCaseMotion_e
+=>ack.vim: buscar en directoryo
+nmap ,ag :Ack! ""<Left>			=> Buscar fichero por contenido
+nmap ,af :AckFile ""<Left>		=> Buscar fichero por nombre
 
-todo ctrlp
+=>camelcasemotion.vim: moverse entre palabras teniendo en cuenta _ como separador de palabra
+map W <Plug>CamelCaseMotion_w	=> siguiente palabra
+map B <Plug>CamelCaseMotion_b	=> palabra anterior
+map E <Plug>CamelCaseMotion_e	=> de inicio a fin de palabra
 
-nmap ,u :GundoToggle
+=> ctrlp.vim: busqueda de ficheros gradual por nombre.
+nnoremap <silent> ,t :CtrlP<CR>					=> Abrir buscador de ficheros
+nnoremap <silent> ,b :CtrlPBuffer<cr>			=> Abrir buscador de buffers
+nnoremap <silent> <D-P> :ClearCtrlPCache<cr>	=> Limpiar caché TODO ver si D funciona en linux
+nnoremap <silent> <D-M> :CtrlPBufTag<CR>		=> Buscar en tags TODO ver si D funciona en linux
+"map ,ja :CtrlP app/assets<CR>   " configurar para buscar en un fichero
 
-todo vim-easymotion
+=> gundo.vim: Herramienta con historial de undos.
+nmap ,u :GundoToggle<CR>	=> Mostrar/Ocultar
 
-todo vim-multiple-cursors
+=> NERDTree.vim: Árbol de directorios y archivos.
+map <leader>p :call NTFinderP()<CR>   => Mostrar/Ocultar
 
-:SaveSession    :OpenSession
-
-todo vim-tmux-navigation
-
-nnoremap ,yr :YRShow    yankring
-nnoremap <C-y> :YRShow   yankring
-
-" next-textobject
-onoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>
+=> next-textobject.vim: Seleccionar grupos de texto. p.e.: din' (delete inside next') borra el contenido entre ''... b=> brackets ()
+onoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>	=> around next
 xnoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>
-onoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>
-xnoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>
-onoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>
+onoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>	=> inside next
+xnoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>	
+onoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>	=> around last
 xnoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>
-onoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>
+onoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>	=> inside last
 xnoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>
 
-settings/wrapping
+=> tComment.vim: comentar código
+nmap <silent> gcp <c-_> 	=> Comentar el párrafo actual
+
+=> vim-easymotion.vim: movesre dentro del archivo
+nmap ,<ESC> ,,w
+nmap ,<S-ESC> ,,b
+
+=> vim-multiple-cursors.vim: múltiples cursores estilo sublime
+,m 	=> una vez empezando a seleccionar: next_key='<C-n>' // prev_key='<C-p>' // skip_key='<C-x>' // quit_key='<Esc>'
+
+=> vim-session.vim: guardar el estado de trabajo
+:SaveSession
+:OpenSession
+
+=> vim-tmux-navigator.vim: Cambiar entre splits abiertos
+<ctrl-h> => Left // <ctrl-j> => Down // <ctrl-k> => Up // <ctrl-l> => Right
+
+=> YankRing.vim: Historial de yanks cambios y borrados
+,yr   //  <C-y> 	=> para ver el historial de cambios
+
+=> YouCompleteMe.vim: autocompletado de código
+nmap <leader>yt :YcmCompleter GetType<CR>
+nmap <leader>yd :YcmCompleter GetDoc<CR>
+imap <C-Tab> <C-X><C-O><C-P>	=> Abrir autocompletado con Ctrl+Tab sin que elija ningun resultado
+
+
+,gf		=> abrir el fichero de nombre donde está el cursor en un split vertical
+
+,ocf	=> Abre ficheros cambiados de git
+
+,q/ 	=> Abre una ventana quickfix de la última búsqueda.
+,qa/	=> Ag sobre la última búsqueda.
+
+K 		=> Ack (búsqueda en dierctoriios) de la palabra actual
+,gg 	=> Abre Ack con comillas
+,gcp 	=> TODO probar que hace, Ack current partial
+,gcf	=> TODO probar que hace, current file?
+
+,f 		=> buscar definición de la clase actual con ctags TODO ver si funciona
+
+:w!!	=> grabar fichero actual como sudo
+
+,gt 	=> Probar el fichero html actual con tidy
+
+,w 		=> Quitar espacios
+
+=> wrapping.vim en settings. TODO ver que hacen
 vmap <D-j> gj
 vmap <D-k> gk
 vmap <D-$> g$
@@ -38,10 +87,3 @@ nmap <D-k> gk
 nmap <D-$> g$
 nmap <D-^> g^
 nmap <D-0> g^
-
-Q  => window killer
-
-,w  => wihtespace killer
-
-w!! para grabar como sudo   settings/sudo-write
-
