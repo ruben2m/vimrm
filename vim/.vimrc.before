@@ -1,0 +1,5 @@
+" Archivo para cambiar configuraciones antes de iniciar los plugins
+" Por ejemplo cambiar las rutas:
+"
+" let dirvim="$HOMEPATH/vimfiles/"
+" let dirvimbundles="$HOMEPATH/vimfiles/bundle"

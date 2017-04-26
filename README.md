@@ -3,6 +3,9 @@
 
 Archivos de configuración para [VIM](http://www.vim.org/)
 
+##### Notas generales:
+Para modificar los directorios de instalación, si hemos instalado vimrm en otro directorio o queremos que los bundles obtenidos se guarden en otro lugar, modificar los directorios en el archivo vim/.vimrc.before
+
 ## Instalación en Debian
 
 ##### Requisitos:

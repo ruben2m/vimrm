@@ -9,23 +9,24 @@
 let mapleader=","
 
 
-let dirvim="C:/Users/esrum/vimfiles/"
+let dirvim="$HOMEPATH/vimfiles/"
+let dirvimbundles="$HOMEPATH/vimfiles/bundle"
 
 " Archivo de configuracion del usuario
 let filename = dirvim . ".vimrc.before"
 if filereadable(expand(filename))
-  exe source 'filename'
+  exe 'source' filename
 endif
 
 set nocompatible
 filetype off
 
-set rtp+=C:/Users/esrum/vimfiles/bundle/Vundle.vim
-call vundle#begin('D:/vim/bundle')
+set rtp+=$HOMEPATH/vimfiles/bundle/Vundle.vim
+call vundle#begin(dirvimbundles)
 
 Plugin 'VundleVim/Vundle.vim'
 
-source C:/Users/esrum/vimfiles/vundles.vim
+source $HOMEPATH/vimfiles/vundles.vim
 
 call vundle#end()
 filetype plugin indent on
@@ -49,5 +50,5 @@ colorscheme railscasts
 " Archivo de configuracion del usuario
 let filename = dirvim . ".vimrc.after"
 if filereadable(expand(filename))
-  exe source filename
+  exe 'source' filename
 endif
