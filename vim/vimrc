@@ -23,7 +23,7 @@ call vundle#begin()
 
 Plugin 'bundle/VundleVim/Vundle.vim'
 
-source vundles.vim
+source ~/.vim/vundles.vim
 
 call vundle#end()
 filetype plugin indent on

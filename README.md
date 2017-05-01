@@ -3,6 +3,8 @@
 
 Archivos de configuración para [VIM](http://www.vim.org/)
 
+Es una personalización del repositorio de vim [yadr](http://skwp.github.io/dotfiles/)
+
 ##### Notas generales:
 Para modificar los directorios de instalación, si hemos instalado vimrm en otro directorio o queremos que los bundles obtenidos se guarden en otro lugar, modificar los directorios en el archivo vim/.vimrc.before
 
@@ -17,7 +19,7 @@ sudo apt-get install git exuberant-ctags curl nodejs silversearcher-ag
 ##### Instalación:
 Clonar el repositorio:
 ```
-git clone https://github.com/ruben2m/vimrm.git ~/.vimrm
+git clone --recursive https://github.com/ruben2m/vimrm.git ~/.vimrm
 ```
 
 Enlazamos el archivo .vimrc y la carpeta .vim
@@ -26,7 +28,7 @@ ln -s ~/.vimrm/vim ~/.vim
 ln -s ~/.vimrm/vim/vimrc ~/.vimrc
 ```
 
-Para la gestión de los plugins se utiliza [Vundle](https://github.com/VundleVim/Vundle.vim), por lo que abrimos vim y ejecutamos:
+Para la gestión de los plugins se utiliza [Vundle](https://github.com/VundleVim/Vundle.vim), por lo que abrimos vim (nos van a aparecer una serie de errores, los obviamos) y ejecutamos:
 ```
 :PluginInstall
 ```
