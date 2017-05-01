@@ -19,7 +19,7 @@ sudo apt-get install git exuberant-ctags curl nodejs
 ##### Instalación:
 Clonar el repositorio:
 ```
-git clone https://github.com/ruben2m/vimrm.git ~/.vimrm
+git clone --recursive https://github.com/ruben2m/vimrm.git ~/.vimrm
 ```
 
 Enlazamos el archivo .vimrc y la carpeta .vim
