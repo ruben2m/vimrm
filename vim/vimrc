@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""
-" Archivo de configuracion neovim windows 
+" Archivo de configuracion linux
 """"""""""""""""""""""""""""""""""""""""""
 
 " Change leader to a comma because the backslash is too far away
@@ -21,7 +21,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'bundle/VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 source ~/.vim/vundles.vim
 

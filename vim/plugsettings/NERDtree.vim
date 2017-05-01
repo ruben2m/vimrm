@@ -1,4 +1,4 @@
-﻿" Make nerdtree look nice
+" Make nerdtree look nice
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
@@ -44,4 +44,6 @@ nnoremap <silent> º :call OpenNerdTree()<CR>
 set siso=0
 
 " Toggles NERDTree
-map <leader>p :call NTFinderP()<CR>
+map <leader>p :call NTFinderP()<CR>
+
+ 
