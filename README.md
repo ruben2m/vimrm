@@ -28,7 +28,7 @@ ln -s ~/.vimrm/vim ~/.vim
 ln -s ~/.vimrm/vim/vimrc ~/.vimrc
 ```
 
-Para la gestión de los plugins se utiliza [Vundle](https://github.com/VundleVim/Vundle.vim), por lo que abrimos vim y ejecutamos:
+Para la gestión de los plugins se utiliza [Vundle](https://github.com/VundleVim/Vundle.vim), por lo que abrimos vim (nos van a aparecer una serie de errores, los obviamos) y ejecutamos:
 ```
 :PluginInstall
 ```
