@@ -22,9 +22,7 @@ if has("gui_running")
   hi Folded guifg=#BC9458
   hi Folded guibg=#232323
 
-  if !has('win32')
-    NERDTreeToggle
-  endif
+  autocmd VimEnter * NERDTreeToggle
 else
   let g:CSApprox_loaded = 1
 
