@@ -8,5 +8,5 @@ nmap <silent> gcp <c-_>p
 
 " Command-/ to toggle comments
 map <A--> :TComment<CR>
+vmap <A--> :TComment<CR>
 imap <A--> <Esc>:TComment<CR>i
-

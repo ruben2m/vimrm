@@ -1,12 +1,4 @@
-" Now using the middle finger of either hand you can type
-" underscores with Alt-k or Alt-d, and add Shift
-" to type dashes
-imap <silent> <A-k> _
-imap <silent> <A-d> _
-imap <silent> <A-K> -
-imap <silent> <A-D> -
-
-" Change inside various enclosures with Alt-" and Alt-'
+﻿" Change inside various enclosures with Alt-" and Alt-'
 " The f makes it find the enclosure so you don't have
 " to be standing inside it
 nnoremap <A-'> f'ci'
@@ -44,15 +36,6 @@ nnoremap <C-Down> <C-w>-
 nnoremap <C-Left> <C-w><
 nnoremap <C-Right>  <C-w>>
 
-" ============================
-" Tabularize - alignment
-" ============================
-" Hit Alt-Shift-A then type a character you want to align by
-nmap <A-A> :Tabularize /
-vmap <A-A> :Tabularize /
-
-" Source current file Alt-% (good for vim development)
-map <A-%> :so %<CR>
 
 
 
@@ -115,6 +98,7 @@ vmap ,} c{ <C-R>" }<ESC>
 vmap ,{ c{<C-R>"}<ESC>
 
 map ,` ysiw`
+vmap ,` c`<C-R>"`<ESC>
 
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
@@ -131,18 +115,6 @@ nnoremap ,. '.
 " put the cursor right after the quote
 imap <C-a> <esc>wa
 
-" ==== NERD tree
-" Open the project tree and expose current file in the nerdtree with Ctrl-\
-" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
-function! OpenNerdTree()
-  if &modifiable && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-  else
-    NERDTreeToggle
-  endif
-endfunction
-nnoremap <silent> <C-\> :call OpenNerdTree()<CR>
-
 " ,q to toggle quickfix window (where you have stuff like Ag)
 " ,oq to open it back up (rare)
 nmap <silent> ,qc :cclose<CR>
@@ -152,16 +124,6 @@ nmap <silent> ,qo :copen<CR>
 "with ,z and ,x
 nnoremap <silent> ,z :bp<CR>
 nnoremap <silent> ,x :bn<CR>
-
-" ==============================
-" Window/Tab/Split Manipulation
-" ==============================
-" Move between split windows by using the four directions H, L, K, J
-" NOTE: This has moved to vim/settings/vim-tmux-navigator.vim.
-" nnoremap <silent> <C-h> <C-w>h
-" nnoremap <silent> <C-l> <C-w>l
-" nnoremap <silent> <C-k> <C-w>k
-" nnoremap <silent> <C-j> <C-w>j
 
 " Make gf (go to file) create the file, if not existent
 nnoremap <C-w>f :sp +e<cfile><CR>
@@ -227,3 +189,17 @@ map <silent> ,hp :!open -a Safari %<CR><CR>
 " :cp)
 nnoremap <silent> <C-x> :cn<CR>
 nnoremap <silent> <C-z> :cp<CR>
+
+" key mapping for saving file
+imap <C-s> <C-c>:w<CR>
+nmap <C-s> :w<CR>
+imap <C-a> <C-c>:wa<CR>
+nmap <C-a> :wa<CR>
+
+
+" limpiar errores de syntastic, cerrar ventana de clang_complete
+" y de quickfix, y quitar busqueda
+nmap <C-c> :SyntasticReset<CR>:pclose<CR>:cclose<CR>//
+
+
+

@@ -55,11 +55,8 @@ https://github.com/scrooloose/nerdtree
 
 //////////ctrlp.vim//////////
 https://github.com/ctrlpvim/ctrlp.vim
-Buscar archivos. 
-,t => abrir en archivos.    ,b abrir en buffer. Y dentro de :CtrlP,
-<c-d> to switch to filename only search instead of full path.
-<c-j>, <c-k> or the arrow keys to navigate the result list.
-<c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+Busqueda de ficheros gradual por nombre.
+"map ,ja :CtrlP app/assets<CR>   " configurar para buscar en un fichero
 ...
 keymap en settings/ctrlp.vim
 
@@ -77,6 +74,7 @@ Gestión de sesiones:
 //////////ack.vim//////////
 https://github.com/mileszs/ack.vim
 :Ack! [options] {pattern} [{directories}]   => ! es para no ir al primer resultado automaticamente
+:AckFile => Buscar por nombre de fichero
 go => preview fichero manteniendo focus en resultados de busqueda
 h  => abrir en split horizontal  // H  => manteniendo foco en resultados
 v  => vertical // gv => foco en resultados
@@ -181,8 +179,7 @@ gcp => comenta un párrafo
 
 //////////camelcasemotion.git//////////
 https://github.com/vim-scripts/camelcasemotion
-Moverse entre palabras. Mejora el de vim.
-,w // ,b // ,e
+moverse entre palabras teniendo en cuenta _ como separador de palabra. Mejora el de vim.
 
 //////////vim-multiple-cursors//////////
 https://github.com/terryma/vim-multiple-cursors

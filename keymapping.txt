@@ -1,89 +1,219 @@
-=>ack.vim: buscar en directoryo
-nmap ,ag :Ack! ""<Left>			=> Buscar fichero por contenido
-nmap ,af :AckFile ""<Left>		=> Buscar fichero por nombre
+﻿//// Abrir ficheros //////////////////////////////////////////
+nnoremap <silent> ,t :CtrlP<CR>			=> ctrlp.vim: Abrir buscador de ficheros
+nnoremap <silent> ,b :CtrlPBuffer<cr>		=> ctrlp.vim: Abrir buscador de buffers
+	<c-d> to switch to filename only search instead of full path.
+	<c-j>, <c-k> or the arrow keys to navigate the result list.
+	<c-t> or <c-v>, <c-x> to open the selected entry in a new tab or in a new split.
+nnoremap <silent> <A-p> :ClearCtrlPCache<cr>	=> ctrlp.vim: Limpiar caché
+nnoremap <silent> <A-m> :CtrlPBufTag<CR>	=> ctrlp.vim: Buscar en tags
 
-=>camelcasemotion.vim: moverse entre palabras teniendo en cuenta _ como separador de palabra
-map W <Plug>CamelCaseMotion_w	=> siguiente palabra
-map B <Plug>CamelCaseMotion_b	=> palabra anterior
-map E <Plug>CamelCaseMotion_e	=> de inicio a fin de palabra
+,p   	=> Mostrar/Ocultar -- NERDTree.vim: map <leader>p :call NTFinderP()<CR>
+º   	=> Mostrar en NERDTree el fichero actual -- NERDTree.vim: nnoremap <silent> º :call OpenNerdTree()<CR>
 
-=> ctrlp.vim: busqueda de ficheros gradual por nombre.
-nnoremap <silent> ,t :CtrlP<CR>					=> Abrir buscador de ficheros
-nnoremap <silent> ,b :CtrlPBuffer<cr>			=> Abrir buscador de buffers
-nnoremap <silent> <D-P> :ClearCtrlPCache<cr>	=> Limpiar caché TODO ver si D funciona en linux
-nnoremap <silent> <D-M> :CtrlPBufTag<CR>		=> Buscar en tags TODO ver si D funciona en linux
-"map ,ja :CtrlP app/assets<CR>   " configurar para buscar en un fichero
+,gf	=> abrir el fichero de nombre donde está el cursor en un split vertical
 
-=> gundo.vim: Herramienta con historial de undos.
-nmap ,u :GundoToggle<CR>	=> Mostrar/Ocultar
-
-=> NERDTree.vim: Árbol de directorios y archivos.
-map <leader>p :call NTFinderP()<CR>   => Mostrar/Ocultar
-
-=> next-textobject.vim: Seleccionar grupos de texto. p.e.: din' (delete inside next') borra el contenido entre ''... b=> brackets ()
-onoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>	=> around next
-xnoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>
-onoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>	=> inside next
-xnoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>	
-onoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>	=> around last
-xnoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>
-onoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>	=> inside last
-xnoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>
-
-=> tComment.vim: comentar código
-nmap <silent> gcp <c-_> 	=> Comentar el párrafo actual
-
-=> vim-easymotion.vim: movesre dentro del archivo
-nmap ,<ESC> ,,w
-nmap ,<S-ESC> ,,b
-
-=> vim-multiple-cursors.vim: múltiples cursores estilo sublime
-,m 	=> una vez empezando a seleccionar: next_key='<C-n>' // prev_key='<C-p>' // skip_key='<C-x>' // quit_key='<Esc>'
-
-=> vim-session.vim: guardar el estado de trabajo
-:SaveSession
-:OpenSession
-
-=> vim-tmux-navigator.vim: Cambiar entre splits abiertos
-<ctrl-h> => Left // <ctrl-j> => Down // <ctrl-k> => Up // <ctrl-l> => Right
-
-=> YankRing.vim: Historial de yanks cambios y borrados
-,yr   //  <C-y> 	=> para ver el historial de cambios
-
-=> YouCompleteMe.vim: autocompletado de código
-nmap <leader>yt :YcmCompleter GetType<CR>
-nmap <leader>yd :YcmCompleter GetDoc<CR>
-imap <C-Tab> <C-X><C-O><C-P>	=> Abrir autocompletado con Ctrl+Tab sin que elija ningun resultado
+,ocf	=> Abre ficheros cambiados de git TODO error en windows
 
 
-,gf		=> abrir el fichero de nombre donde está el cursor en un split vertical
+//// Busquedas ////////////////////////////////////////////////
+nmap ,ag :Ack! ""<Left>			=> ack.vim: Buscar fichero por contenido
+nmap ,af :AckFile! ""<Left>		=> ack.vim: Buscar fichero por nombre
 
-,ocf	=> Abre ficheros cambiados de git
+,f 	=> buscar definición de la clase actual con ctags TODO ver si funciona
 
-,q/ 	=> Abre una ventana quickfix de la última búsqueda.
-,qa/	=> Ag sobre la última búsqueda.
-
-K 		=> Ack (búsqueda en dierctoriios) de la palabra actual
+K 	=> Ack (búsqueda en directorios) de la palabra actual
 ,gg 	=> Abre Ack con comillas
-,gcp 	=> TODO probar que hace, Ack current partial
-,gcf	=> TODO probar que hace, current file?
+,gcp 	=> TODO no se bien lo que hace, Ack current partial
+,gcf	=> Busca con Ack por el nombre del fichero en el directorio actual
 
-,f 		=> buscar definición de la clase actual con ctags TODO ver si funciona
 
-:w!!	=> grabar fichero actual como sudo
+//// Moverse por el documento /////////////////////////////////
+,m 	=> vim-multiple-cursors.vim: una vez empezando a seleccionar.quit_key='<Esc>'
+
+map W <Plug>CamelCaseMotion_w	=> camelcasemotion.vim: siguiente palabra
+map B <Plug>CamelCaseMotion_b	=> camelcasemotion.vim: palabra anterior
+map E <Plug>CamelCaseMotion_e	=> camelcasemotion.vim: de inicio a fin de palabra
+
+,,w    => vim-easymotion.vim: mostrar caracteres para moverse hacia delante
+,,b    => vim-easymotion.vim: mostrar caracteres para moverse hacia atrás
+
+=> Seleccionar grupos de texto. p.e.: din' (delete inside next') borra el contenido entre ''... b=> brackets ()
+onoremap an :<c-u>call <SID>NextTextObject('a', '/')<cr>	=> settings/next-textobject.vim: around next. xnoremap
+onoremap in :<c-u>call <SID>NextTextObject('i', '/')<cr>	=> settings/next-textobject.vim: inside next. noremap
+onoremap al :<c-u>call <SID>NextTextObject('a', '?')<cr>	=> settings/next-textobject.vim: around last. xnoremap
+onoremap il :<c-u>call <SID>NextTextObject('i', '?')<cr>	=> settings/next-textobject.vim: inside last. xnoremap
+
+k gk	=> Navegar entre lineas con wrap -- settings/wrapping.com: nmap k gk
+j gj, g$  g^, ...
+
+<A-j> }	=> Siguiente función
+<A-k> {	=> Anterior. (Se definen en settings/keymap.vim por cada lenguaje) nnoremap
+
+0	=> Para ir al inicio de la linea -- keymap.vim: nnoremap 0 ^
+
+,.	=> Ir al último sitio de edición -- keymap.vim: nnoremap
+
+<C-a>	=> Salirse de las comillas -- keymap.vim: imap <C-a> <esc>wa
+
+
+//// Edición /////////////////////////////////////////////////
+nmap ,u :GundoToggle<CR>	=> gundo.vim: Mostrar/Ocultar
+
+nmap <silent> gcp <c-_> 	=> tComment.vim: Comentar el párrafo actual
+map <A--> :TComment<CR>         => tComment.vim: Comentar línea actual. vmap, imap <A--> <Esc>:TComment<CR>i
+
+,yr	=> YankRing.vim: para ver el historial de cambios
+
+nmap <leader>yt :YcmCompleter GetType<CR>	=> YouCompleteMe.vim:
+nmap <leader>yd :YcmCompleter GetDoc<CR>	=> YouCompleteMe.vim: 
+imap <C-Tab> <C-X><C-O><C-P>			=> YouCompleteMe.vim: Abrir autocompletado con Ctrl+Tab sin que elija ningun resultado
 
 ,gt 	=> Probar el fichero html actual con tidy
 
-,w 		=> Quitar espacios
+:w!!	=> grabar fichero actual como sudo
 
-=> wrapping.vim en settings. TODO ver que hacen
-vmap <D-j> gj
-vmap <D-k> gk
-vmap <D-$> g$
-vmap <D-^> g^
-vmap <D-0> g^
-nmap <D-j> gj
-nmap <D-k> gk
-nmap <D-$> g$
-nmap <D-^> g^
-nmap <D-0> g^
+,w	=> Quitar espacios
+
+nnoremap <A-'> f'ci'	=> Cambia texto entre '' más cercanas
+nnoremap <A-"> f"ci"	=> Cambia texto entre "" más cercanas
+nnoremap <A-(> f(ci(	=> Cambia texto entre (). OJO: para cuando el cursor está antes de (
+nnoremap <A-)> f)ci)	=> Cambia texto entre (), cuando el cursor está dentro de los parentesis.
+nnoremap <A-[> f[ci[	=> Cambia texto entre []. OJO: para cuando el cursor está antes de [
+nnoremap <A-]> f]ci]	=> Cambia texto entre [], cuando el cursor está dentro de los corchetes.
+
+nmap <A-t> :Tabularize /	=> tabular.vim: Alt+t+caracter para alinear+intro. Alinea por columnas con el caracter indicado. vmap.
+
+nnoremap ,yw yiww	=> 'yank inner word' -- keymap.vim
+nnoremap ,ow "_diwhp	=> 'overwrite word' con lo que hay en yank buffer -- keymap.vim
+
+,#	=> Surround a word with #{ruby interpolation} -- keymap.vim: nmap+vmap
+,"	=> Surround a word with "quotes" -- keymap.vim: nmap+vmap
+,'	=> Surround a word with 'single quotes' -- keymap.vim: nmap+vmap
+,) o ,(	=> Surround a word with (parens) The difference is in whether a space is put in -- keymap.vim: nmap+vmap
+,[	=> Surround a word with [brackets] -- keymap.vim: nmap+vmap
+,{	=> Surround a word with {braces} -- keymap.vim: nmap+vmap
+,`	=> Surround a word with `braces` -- keymap.vim: nmap+vmap
+
+<C-l>	=> escribir '=>'  gary bernhardt's hashrocket -- keymap.vim: imap
+
+
+//// Espacio de trabajo //////////////////////////////////////
+:SaveSession	=> guardar el estado de trabajo -- vim-session.vim
+:OpenSession	=> cargar el estado de trabajo -- vim-session.vim
+
+<ctrl-h> => Left // <ctrl-j> => Down // <ctrl-k> => Up // <ctrl-l> => Right || Cambiar entre splits -- vim-tmux-navigator.vim
+
+map <silent> <A-1> :tabn 1<cr>	=> Ir a tab 1,2,3,4,5,6,7,8,9 -- keymap.vim
+
+<C-Up> <C-Down> <C-Left> <C-Right> => Redimensionar ventanas con flechas -- keymap.vim nnoremap <C-Up> <C-w>+ ...
+
+,qc	=> cerrar quickfix window -- keymap.vim: nmap
+,qo	=> abrir quickfix window -- keymap.vim: nmap
+
+
+
+
+
+
+
+
+
+
+
+
+===============================================
+== Lista de keymaps que faltan por describir ==
+===============================================
+
+
+
+"make Y consistent with C and D
+nnoremap Y y$
+function! YRRunAfterMaps()
+  nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
+
+
+
+"Move back and forth through previous and next buffers
+"with ,z and ,x
+nnoremap <silent> ,z :bp<CR>
+nnoremap <silent> ,x :bn<CR>
+
+" Make gf (go to file) create the file, if not existent
+nnoremap <C-w>f :sp +e<cfile><CR>
+nnoremap <C-w>gf :tabe<cfile><CR>
+
+" Zoom in
+map <silent> ,gz <C-w>o
+
+" Create window splits easier. The default
+" way is Ctrl-w,v and Ctrl-w,s. I remap
+" this to vv and ss
+nnoremap <silent> vv <C-w>v
+nnoremap <silent> ss <C-w>s
+
+" create <%= foo %> erb tags using Ctrl-k in edit mode
+imap <silent> <C-K> <%=   %><Esc>3hi
+
+" create <%= foo %> erb tags using Ctrl-j in edit mode
+imap <silent> <C-J> <%  %><Esc>2hi
+
+" ============================
+" Shortcuts for everyday tasks
+" ============================
+
+" copy current filename into system clipboard - mnemonic: (c)urrent(f)ilename
+" this is helpful to paste someone the path you're looking at
+nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
+nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
+
+"Clear current search highlight by double tapping //
+nmap <silent> // :nohlsearch<CR>
+
+"(v)im (c)ommand - execute current line as a vim command
+nmap <silent> ,vc yy:<C-f>p<C-c><CR>
+
+"(v)im (r)eload
+nmap <silent> ,vr :so %<CR>
+
+" Type ,hl to toggle highlighting on/off, and show current value.
+noremap ,hl :set hlsearch! hlsearch?<CR>
+
+" These are very similar keys. Typing 'a will jump to the line in the current
+" file marked with ma. However, `a will jump to the line and column marked
+" with ma.  It’s more useful in any case I can imagine, but it’s located way
+" off in the corner of the keyboard. The best way to handle this is just to
+" swap them: http://items.sjbach.com/319/configuring-vim-right
+nnoremap ' `
+nnoremap ` '
+
+" ============================
+" SplitJoin plugin
+" ============================
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
+
+" Get the current highlight group. Useful for then remapping the color
+map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+
+" ,hp = html preview
+map <silent> ,hp :!open -a Safari %<CR><CR>
+
+" Map Ctrl-x and Ctrl-z to navigate the quickfix error list (normally :cn and
+" :cp)
+nnoremap <silent> <C-x> :cn<CR>
+nnoremap <silent> <C-z> :cp<CR>
+
+" key mapping for saving file
+imap <C-s> <C-c>:w<CR>
+nmap <C-s> :w<CR>
+imap <C-a> <C-c>:wa<CR>
+nmap <C-a> :wa<CR>
+
+
+" limpiar errores de syntastic, cerrar ventana de clang_complete
+" y de quickfix, y quitar busqueda
+nmap <C-c> :SyntasticReset<CR>:pclose<CR>:cclose<CR>//
+
+

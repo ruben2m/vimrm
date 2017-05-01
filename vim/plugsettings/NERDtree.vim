@@ -1,4 +1,4 @@
-" Make nerdtree look nice
+﻿" Make nerdtree look nice
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
@@ -30,8 +30,18 @@ function! NTFinderP()
     endif
 endfunction
 
+function! OpenNerdTree()
+  if &modifiable && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+  else
+    NERDTreeToggle
+  endif
+endfunction
+" Mostrar en NERDTree el fichero actual
+nnoremap <silent> º :call OpenNerdTree()<CR>
+
 " Quito el scrolloff horizontal para ver mejor el nerdtree
 set siso=0
 
 " Toggles NERDTree
-map <leader>p :call NTFinderP()<CR>
+map <leader>p :call NTFinderP()<CR>

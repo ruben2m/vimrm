@@ -9,9 +9,9 @@ Para modificar los directorios de instalación, si hemos instalado vimrm en otro
 ## Instalación en Debian
 
 ##### Requisitos:
-Instalar [git](https://git-scm.com/book/es/v1/Empezando-Instalando-Git#Instalando-en-Linux), [ctags](http://ctags.sourceforge.net/), [curl](https://curl.haxx.se/) y [nodejs](https://nodejs.org/es/):
+Instalar [git](https://git-scm.com/book/es/v1/Empezando-Instalando-Git#Instalando-en-Linux), [ctags](http://ctags.sourceforge.net/), [curl](https://curl.haxx.se/), [nodejs](https://nodejs.org/es/) y [SilverSearcher](https://blog.kowalczyk.info/software/the-silver-searcher-for-windows.html):
 ```
-sudo apt-get install git exuberant-ctags curl nodejs
+sudo apt-get install git exuberant-ctags curl nodejs silversearcher-ag
 ```
 
 ##### Instalación:
@@ -50,6 +50,7 @@ C:\> choco install -y curl
 C:\> choco install -y nodejs.install
 C:\> choco install -y python2
 C:\> choco install -y cmake.install
+C:\> choco install -y ag
 ```
 Después de cerrar y abrir el terminal para que se actualice el PATH, se puede comprobar si se ha instalado bien:
 ```

@@ -11,10 +11,10 @@ function! GetVisual()
 endfunction
 
 "grep the current word using K (mnemonic Kurrent)
-nnoremap <silent> K :Ack <cword><CR>
+nnoremap <silent> K :Ack! <cword><CR>
 
 "grep visual selection
-vnoremap K :<C-U>execute "Ack " . GetVisual()<CR>
+vnoremap K :<C-U>execute "Ack! " . GetVisual()<CR>
 
 "grep current word up to the next exclamation point using ,K
 "TODO no veo utilidad      nnoremap ,K viwf!:<C-U>execute "Ack " . GetVisual()<CR>
@@ -24,14 +24,14 @@ vnoremap K :<C-U>execute "Ack " . GetVisual()<CR>
 
 ",gg = Grep! - using Ag the silver searcher
 " open up a grep line, with a quote started for the search
-nnoremap ,gg :Ack ""<left>
+nnoremap ,gg :Ack! ""<left>
 
 "Grep Current Partial
 function! AgCurrentPartial()
   let l:fileNameWithoutExtension = expand('%:t:r')
   let l:fileNameWithoutUnderscore = substitute(l:fileNameWithoutExtension, '^_','','g')
   let l:grepPattern = "render.*[\\\'\\\"].*" . l:fileNameWithoutUnderscore . "[\\\'\\\"]$"
-  exec 'Ack "' . l:grepPattern . '"'
+  exec 'Ack! "' . l:grepPattern . '"'
 endfunction
 
 command! AgCurrentPartial call AgCurrentPartial()
@@ -39,4 +39,4 @@ command! AgCurrentPartial call AgCurrentPartial()
 nnoremap ,gcp :AgCurrentPartial<CR>
 
 "Grep for usages of the current file
-nnoremap ,gcf :exec "Ack " . expand("%:t:r")<CR>
+nnoremap ,gcf :exec "Ack! " . expand("%:t:r")<CR>

@@ -9,8 +9,8 @@
 let mapleader=","
 
 
-let dirvim="$HOMEPATH/vimfiles/"
-let dirvimbundles="$HOMEPATH/vimfiles/bundle"
+let dirvim="$HOMEDRIVE$HOMEPATH/vimfiles/"
+let dirvimbundles="$HOMEDRIVE$HOMEPATH/vimfiles/bundle"
 
 " Archivo de configuracion del usuario
 let filename = dirvim . ".vimrc.before"
@@ -21,12 +21,12 @@ endif
 set nocompatible
 filetype off
 
-set rtp+=$HOMEPATH/vimfiles/bundle/Vundle.vim
+set rtp+=$HOMEDRIVE$HOMEPATH/vimfiles/bundle/Vundle.vim
 call vundle#begin(dirvimbundles)
 
 Plugin 'VundleVim/Vundle.vim'
 
-source $HOMEPATH/vimfiles/vundles.vim
+source $HOMEDRIVE$HOMEPATH/vimfiles/vundles.vim
 
 call vundle#end()
 filetype plugin indent on
