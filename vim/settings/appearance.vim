@@ -12,11 +12,11 @@ if has("gui_running")
   set lines=60
   set columns=190
 
-  if has("gui_gtk2")
+  " if has("gui_gtk2")
     set guifont=Inconsolata\ XL\ 10,Inconsolata\ 13,Monaco\ 10
-  else
-    set guifont=Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
-  end
+  " else
+   " set guifont=Inconsolata\ XL:h17,Inconsolata:h20,Monaco:h17
+  " end
 
   colorscheme railscasts
   hi Folded guifg=#BC9458
