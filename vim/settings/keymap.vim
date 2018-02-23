@@ -207,3 +207,11 @@ nmap <C-c> :SyntasticReset<CR>:pclose<CR>:cclose<CR>//
 " ============================
 " Para compatibilizar con YCM, Shift + Espacio para autocompletar snippet
 imap <S-Space> <Esc>a<Plug>snipMateTrigger
+
+" next: siguiente punto en el snippet
+imap <S-s>n <Plug>snipMateNextOrTrigger
+smap <S-s>n <Plug>snipMateNextOrTrigger
+
+" previous: punto anterior en el snippet
+imap <S-s>p <Plug>snipMateBack
+smap <S-s>p <Plug>snipMateBack
