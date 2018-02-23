@@ -202,4 +202,8 @@ nmap <C-a> :wa<CR>
 nmap <C-c> :SyntasticReset<CR>:pclose<CR>:cclose<CR>//
 
 
-
+" ============================
+" SnipMate plugin
+" ============================
+" Para compatibilizar con YCM, Shift + Espacio para autocompletar snippet
+imap <S-Space> <Esc>a<Plug>snipMateTrigger
