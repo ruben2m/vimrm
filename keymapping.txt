@@ -16,15 +16,17 @@ nnoremap <silent> <A-m> :CtrlPBufTag<CR>	=> ctrlp.vim: Buscar en tags
 
 
 //// Busquedas ////////////////////////////////////////////////
-nmap ,ag :Ack! ""<Left>			=> ack.vim: Buscar fichero por contenido
-nmap ,af :AckFile! ""<Left>		=> ack.vim: Buscar fichero por nombre
 
-,f 	=> buscar definición de la clase actual con ctags TODO ver si funciona
+,f 	  => buscar definición de la clase actual con ctags TODO ver si funciona
+,t    => Buscar ficheros (plugin CtrlP)
 
-K 	=> Ack (búsqueda en directorios) de la palabra actual
+K 	  => Ack (búsqueda en directorios) de la palabra actual
 ,gg 	=> Abre Ack con comillas
+,ag   => Buscar fichero por contenido (ack.vim: nmap ,ag :Ack! ""<Left>)
+,af   => Buscar fichero por nombre (ack.vim: nmap ,af :AckFile! ""<Left>)
 ,gcp 	=> TODO no se bien lo que hace, Ack current partial
 ,gcf	=> Busca con Ack por el nombre del fichero en el directorio actual
+
 
 
 //// Moverse por el documento /////////////////////////////////
